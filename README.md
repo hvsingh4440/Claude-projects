@@ -1,38 +1,32 @@
 # claude-projects
 
-## Claude Code skills
+Claude Code skills tuned for building and developing projects. Everything here loads
+automatically in any Claude Code session opened on this repo.
 
-`.claude/skills/` and `.claude/agents/` hold the Caveman skill set by Julius Brussee,
-copied unchanged from https://github.com/JuliusBrussee/caveman (commit `2e068f735253cce28256744804785f01887d9646`).
-Licensed Apache-2.0; see `third_party/caveman/`.
+## Skill set
 
-| Skill / agent | Use |
-|---|---|
-| `caveman` | `/caveman`: terse replies, all technical facts kept. Off with "stop caveman". |
-| `ultracave` | `/ultracave` or `/caveman ultra`: maximum compression. |
-| `megacave` | `/megacave`: Classical Chinese register. |
-| `caveman-compress` | `/caveman-compress <file>`: compress CLAUDE.md or other memory files. Sends the file's text to a model provider. |
-| `cavecrew` + agents | Delegates search, small edits and reviews to subagents that answer compressed. |
-
-Not included: `caveman-stats`, the hooks and the status line. Those need the full plugin:
-`claude plugin marketplace add JuliusBrussee/caveman && claude plugin install caveman@caveman`
-
-### UI/UX Pro Max
-
-`.claude/skills/ui-ux-pro-max/` is copied unchanged from
-https://github.com/nextlevelbuilder/ui-ux-pro-max-skill (commit `713eef51b04efc98d6fa565323b495f7c9c89fd4`). MIT; see `third_party/ui-ux-pro-max/`.
-It searches local design data (styles, palettes, fonts, UX rules, 22 stacks) with a Python 3 script; no network, no extra packages.
-Installed as a project skill, run the script from the repo root:
-`python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<query>" --design-system`
-(the skill's own instructions use `${CLAUDE_PLUGIN_ROOT}`, which is only set in a plugin install).
-
-#### Companion design skills (same source, same commit)
-
-| Skill | Use | Needs |
+| Skill | Trigger | Job |
 |---|---|---|
-| `design-system` | Tokens (primitive→semantic→component), component specs, token-driven slides | Python 3 / Node for scripts |
-| `brand` | Brand voice, visual identity, messaging, consistency checks | Node for scripts |
-| `design` | Logos, corporate identity, icons, banners, social images, slides | `GEMINI_API_KEY`, `ATLASCLOUD_API_KEY` or `MUAPI_API_KEY` for AI image generation (sends prompts to that provider) |
-| `banner-design` | Social, ad, hero and print banners | Optional image generation via `design` |
-| `slides` | HTML presentations with Chart.js | Browser |
-| `ui-styling` | shadcn/ui + Tailwind components, theming, dark mode, canvas posters (bundles 5.5 MB of fonts, see its `LICENSE.txt`) | Node for `shadcn_add.py` |
+| `ui-ux-pro-max` | auto on UI work | Design decisions: style, palette, fonts, UX/accessibility rules, per-stack guidance (22 stacks). Local search, no network. |
+| `ui-styling` | auto on UI work | Implementation: shadcn/ui + Tailwind components, theming, dark mode. |
+| `design-system` | auto on token work | Token architecture (primitive → semantic → component), component specs, CSS variables. |
+| `caveman` | `/caveman` | Short replies, every technical fact kept. Off: "stop caveman". |
+| `ultracave` | `/ultracave` | Maximum compression. Manual only. |
+| `megacave` | `/megacave` | Classical Chinese register. Manual only; kept because `/caveman wenyan` points to it. |
+| `caveman-compress` | `/caveman-compress <file>` | Shrinks CLAUDE.md and other memory files to cut input tokens every session. Sends the file to a model provider. |
+| `cavecrew` + 3 agents | auto on delegation | Investigator / builder / reviewer subagents that return compressed results (Haiku model). |
+
+## Deliberately excluded
+
+- `brand`, `design`, `banner-design`, `slides`: marketing and asset generation, not development. `design` also needs a paid image API key. Restore from the source repo if needed.
+- `caveman-stats`, Caveman hooks and status line: need the full plugin:
+  `claude plugin marketplace add JuliusBrussee/caveman && claude plugin install caveman@caveman`
+
+## Sources and local changes
+
+- Caveman: https://github.com/JuliusBrussee/caveman @ `2e068f735253cce28256744804785f01887d9646` (Apache-2.0, `third_party/caveman/`). Unchanged.
+- UI/UX Pro Max: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill @ `713eef51b04efc98d6fa565323b495f7c9c89fd4` (MIT, `third_party/ui-ux-pro-max/`). Changes:
+  - `ui-ux-pro-max/SKILL.md`: script path falls back to the repo root when `CLAUDE_PLUGIN_ROOT` is unset (project install).
+  - `ui-ux-pro-max/scripts/tests/` removed (upstream test suite, not needed to use the skill).
+
+Search command: `python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<query>" --design-system`
