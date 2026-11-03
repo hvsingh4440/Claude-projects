@@ -25,3 +25,14 @@ It searches local design data (styles, palettes, fonts, UX rules, 22 stacks) wit
 Installed as a project skill, run the script from the repo root:
 `python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<query>" --design-system`
 (the skill's own instructions use `${CLAUDE_PLUGIN_ROOT}`, which is only set in a plugin install).
+
+#### Companion design skills (same source, same commit)
+
+| Skill | Use | Needs |
+|---|---|---|
+| `design-system` | Tokens (primitive→semantic→component), component specs, token-driven slides | Python 3 / Node for scripts |
+| `brand` | Brand voice, visual identity, messaging, consistency checks | Node for scripts |
+| `design` | Logos, corporate identity, icons, banners, social images, slides | `GEMINI_API_KEY`, `ATLASCLOUD_API_KEY` or `MUAPI_API_KEY` for AI image generation (sends prompts to that provider) |
+| `banner-design` | Social, ad, hero and print banners | Optional image generation via `design` |
+| `slides` | HTML presentations with Chart.js | Browser |
+| `ui-styling` | shadcn/ui + Tailwind components, theming, dark mode, canvas posters (bundles 5.5 MB of fonts, see its `LICENSE.txt`) | Node for `shadcn_add.py` |
