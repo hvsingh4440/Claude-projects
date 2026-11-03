@@ -16,3 +16,12 @@ Licensed Apache-2.0; see `third_party/caveman/`.
 
 Not included: `caveman-stats`, the hooks and the status line. Those need the full plugin:
 `claude plugin marketplace add JuliusBrussee/caveman && claude plugin install caveman@caveman`
+
+### UI/UX Pro Max
+
+`.claude/skills/ui-ux-pro-max/` is copied unchanged from
+https://github.com/nextlevelbuilder/ui-ux-pro-max-skill (commit `713eef51b04efc98d6fa565323b495f7c9c89fd4`). MIT; see `third_party/ui-ux-pro-max/`.
+It searches local design data (styles, palettes, fonts, UX rules, 22 stacks) with a Python 3 script; no network, no extra packages.
+Installed as a project skill, run the script from the repo root:
+`python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<query>" --design-system`
+(the skill's own instructions use `${CLAUDE_PLUGIN_ROOT}`, which is only set in a plugin install).
