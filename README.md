@@ -9,6 +9,7 @@ automatically in any Claude Code session opened on this repo.
 |---|---|---|
 | `ui-ux-pro-max` | auto on UI work | Design decisions: style, palette, fonts, UX/accessibility rules, per-stack guidance (22 stacks). Local search, no network. |
 | `ui-styling` | auto on UI work | Implementation: shadcn/ui + Tailwind components, theming, dark mode. |
+| `taste-skill` | auto on any page or screen build | Art direction: researched visual directions, strict no-generic-AI style, lint and real-browser inspection. Needs Node 22+ and Chrome for its scripts. |
 | `brand` | auto on brand work | Brand voice, messaging, visual identity, consistency checks. Restored for shop and portfolio sites. |
 | `design-system` | auto on token work | Token architecture (primitive → semantic → component), component specs, CSS variables. |
 | `caveman` | `/caveman` | Short replies, every technical fact kept. Off: "stop caveman". |
@@ -25,6 +26,7 @@ automatically in any Claude Code session opened on this repo.
 
 ## Sources and local changes
 
+- Taste Skill: https://github.com/Leonxlnx/taste-skill @ `12af471f627f866411b4bd785b19646d3672784c` (MIT, `third_party/taste-skill/`). Unchanged except `evals/` removed.
 - Caveman: https://github.com/JuliusBrussee/caveman @ `2e068f735253cce28256744804785f01887d9646` (Apache-2.0, `third_party/caveman/`). Unchanged.
 - UI/UX Pro Max: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill @ `713eef51b04efc98d6fa565323b495f7c9c89fd4` (MIT, `third_party/ui-ux-pro-max/`). Changes:
   - `ui-ux-pro-max/SKILL.md`: script path falls back to the repo root when `CLAUDE_PLUGIN_ROOT` is unset (project install).

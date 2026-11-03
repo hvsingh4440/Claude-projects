@@ -12,5 +12,6 @@ Building websites for product- or service-based e-commerce, plus portfolio sites
 ## Using the skills in .claude/skills
 
 - `ui-ux-pro-max`: run `python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<query>" --design-system`. Check that the top result fits the product before using it. Its marketplace and multi-tenant results are weak; do not rely on them.
+- `taste-skill` sets the visual direction (look, type, palette, layout, motion). `ui-ux-pro-max` supplies UX and accessibility rules and stack guidance. When they disagree: taste-skill decides the visual style, `ui-ux-pro-max` decides usability and accessibility (contrast, touch targets, keyboard, focus, reduced motion). Do not run both design searches for the same decision; pick one source per question.
 - `ui-styling` for components, `design-system` for tokens, `brand` for voice and identity.
 - `caveman`, `ultracave` and `megacave` only run when the user asks. Do not apply them to code, commits or docs.
