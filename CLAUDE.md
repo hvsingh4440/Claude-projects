@@ -9,6 +9,14 @@ Building websites for product- or service-based e-commerce, plus portfolio sites
 - Data: put a `site_id` column on every table from the start, even with one site, so a second business can be added later without a rewrite. Do not build full multi-tenancy (per-plan feature switches, tenant admin) until a second customer exists.
 - Build one real shop with a portfolio section before generalizing into a reusable platform.
 
+## When the user gives a business model
+
+Use the `build-business-website` skill. Think through the public site, customer side, backend and a full admin panel before coding. Write `docs/spec.md`, show the assumptions and open decisions, and wait for approval before building, unless the user has said to proceed.
+
+## Before launch
+
+Run the critical paths in a real browser (sign up, buy, then refund from the admin panel), test webhooks twice, check each role's access, and check mobile, keyboard use and contrast. Report what was not tested.
+
 ## Using the skills in .claude/skills
 
 - `ui-ux-pro-max`: run `python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<query>" --design-system`. Check that the top result fits the product before using it. Its marketplace and multi-tenant results are weak; do not rely on them.

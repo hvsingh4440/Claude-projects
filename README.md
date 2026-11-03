@@ -9,6 +9,7 @@ automatically in any Claude Code session opened on this repo.
 |---|---|---|
 | `ui-ux-pro-max` | auto on UI work | Design decisions: style, palette, fonts, UX/accessibility rules, per-stack guidance (22 stacks). Local search, no network. |
 | `ui-styling` | auto on UI work | Implementation: shadcn/ui + Tailwind components, theming, dark mode. |
+| `build-business-website` | auto when given a business model | Turns a business model into a spec (public site, customer side, backend, admin panel with full controls), builds in a safe order, tests in a browser. |
 | `taste-skill` | auto on any page or screen build | Art direction: researched visual directions, strict no-generic-AI style, lint and real-browser inspection. Needs Node 22+ and Chrome for its scripts. |
 | `brand` | auto on brand work | Brand voice, messaging, visual identity, consistency checks. Restored for shop and portfolio sites. |
 | `design-system` | auto on token work | Token architecture (primitive → semantic → component), component specs, CSS variables. |
