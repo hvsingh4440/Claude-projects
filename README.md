@@ -9,6 +9,7 @@ automatically in any Claude Code session opened on this repo.
 |---|---|---|
 | `ui-ux-pro-max` | auto on UI work | Design decisions: style, palette, fonts, UX/accessibility rules, per-stack guidance (22 stacks). Local search, no network. |
 | `ui-styling` | auto on UI work | Implementation: shadcn/ui + Tailwind components, theming, dark mode. |
+| `brand` | auto on brand work | Brand voice, messaging, visual identity, consistency checks. Restored for shop and portfolio sites. |
 | `design-system` | auto on token work | Token architecture (primitive → semantic → component), component specs, CSS variables. |
 | `caveman` | `/caveman` | Short replies, every technical fact kept. Off: "stop caveman". |
 | `ultracave` | `/ultracave` | Maximum compression. Manual only. |
@@ -18,7 +19,7 @@ automatically in any Claude Code session opened on this repo.
 
 ## Deliberately excluded
 
-- `brand`, `design`, `banner-design`, `slides`: marketing and asset generation, not development. `design` also needs a paid image API key. Restore from the source repo if needed.
+- `design`, `banner-design`, `slides`: asset generation and decks, not development. `design` also needs a paid image API key. Restore from the source repo if needed.
 - `caveman-stats`, Caveman hooks and status line: need the full plugin:
   `claude plugin marketplace add JuliusBrussee/caveman && claude plugin install caveman@caveman`
 
